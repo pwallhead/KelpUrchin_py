@@ -55,7 +55,7 @@ def int(S0=0, U0=[], ndt=1, ns=1, nagesU=15, area=200, dtS=np.arange(0,1.01,0.01
     import KelpUrchin
     import numpy as np
     S,U,out = KelpUrchin.int(4,[],1)
-    S #Should give array([[1.14884063]]) - note this is not affected by urchin recruitment stochasticity
+    S #Should give array([[1.15593335]]) - note this is not affected by urchin recruitment stochasticity
     U #Note that U[0,0] varies between repeat runs due to recruitment stochasticity
       #This can be switched off, resulting in a deterministic system, by setting the stochasticity standard deviation to zero 
       #(S,U,out = KelpUrchin.int(4,[],1,theta={'rUsig':0}))
@@ -922,6 +922,7 @@ def int(S0=0, U0=[], ndt=1, ns=1, nagesU=15, area=200, dtS=np.arange(0,1.01,0.01
         out.update({'NUAht':NUAht,'UBAht':UBAht,'UGAht':UGAht,'pUh':pUh,'hparsU':hparsU})  
 
     return [S,U,out]
+
 
 def intKelp(t,S0,rS=0.025,alphaS=1,KS=11,G=1,hS=0):
     """
